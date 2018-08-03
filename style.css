@@ -1,0 +1,268 @@
+:root {
+    --color1: #002b55;
+    --color2: #0381FB;
+    --mywhite: #fdfdfd;
+    --mygrey: #f3f3f3;
+    --lightblack: #222222;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    background-color: var(--mywhite);
+    color: var(--lightblack);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--mywhite);
+    padding: 20px;
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+header img {
+    width: 350px;
+    margin: 0 0 0 35px;
+}
+
+header a.donate {
+    border: 1.0px solid var(--color1);
+    color: var(--color1);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.2s color ease-in, 0.2s border-color ease-in;
+}
+
+header a.donate:hover {
+    border-color: var(--color2);
+    color: var(--color2);
+}
+
+h1 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 800;
+    font-size: 5.0rem;
+}
+
+section {
+    height: 100vh;
+}
+
+#intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro p {
+    max-width: 800px;
+}
+
+section.light,
+section.dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+section.dark {
+    background-color: var(--mygrey);
+}
+
+section.light h1 {
+    color: var(--color1);
+}
+
+section.dark h1 {
+    color: var(--color2);
+    text-align: right;
+}
+
+.big-number {
+    position: relative;
+    font-size: 30vw;
+    font-weight: 800;
+    z-index: 0;
+    align-self: flex-start;
+}
+
+section.light .big-number {
+    color: var(--mygrey);
+}
+
+section.dark .big-number {
+    color: var(--mywhite);
+}
+
+.main-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    overflow: hidden;
+    width: 100%;
+}
+
+.main-container img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.text-container {
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    padding: 0 50px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+p strong {
+    font-weight: 500;
+}
+
+section.dark p {
+    text-align: right;
+}
+
+#bigno1,
+#bigno2,
+#bigno3,
+#bigno4 {
+    top: -10%;
+}
+
+#bigno1 {
+    opacity: 0;
+}
+
+#bigno3 {
+    font-size: 15vw;
+}
+
+#trigger1top {
+    position: relative;
+    top: 80vh;
+}
+
+#trigger1mid {
+    top: 150vh;
+    position: absolute;
+}
+
+#trigger2top {
+    position: relative;
+    top: 300vh;
+}
+
+#trigger2mid {
+    top: 350vh;
+    position: absolute;
+}
+
+#trigger3top {
+    position: relative;
+    top: 500vh;
+}
+
+#trigger3mid {
+    position: relative;
+    top: 550vh;
+}
+
+#trigger4top {
+    position: relative;
+    top: 700vh;
+}
+
+#trigger4mid {
+    position: relative;
+    top: 750vh;
+}
+
+#animate2image,
+#animate4image {
+    position: relative;
+    left: 100%;
+    transform: rotate(120deg);
+    opacity: 0;
+}
+
+#main2,
+#main4 {
+    transform: translateX(-25px);
+    opacity: 0;
+}
+
+#animate1image,
+#animate3image {
+    position: relative;
+    left: -100%;
+    transform: rotate(120deg);
+    opacity: 0;
+}
+
+#main1,
+#main3 {
+    transform: translateX(25px);
+    opacity: 0;
+}
+
+#donate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+#donate h1 {
+    color: var(--color1);
+}
+
+#donate p {
+    max-width: 800px;
+}
+
+.btn-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin-top: 50px;
+}
+
+.btn-container a {
+    border: 1.0px solid var(--color1);
+    color: var(--color1);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 12px 20px;
+    width: 220px;
+    transition: 0.2s color ease-in, 0.2s border-color ease-in;
+}
+
+.btn-container a:hover {
+    border-color: var(--color2);
+    color: var(--color2);
+}
