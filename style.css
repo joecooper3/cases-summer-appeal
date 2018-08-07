@@ -24,13 +24,21 @@ header {
     box-sizing: border-box;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 10;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
 }
 
 header img {
     width: 350px;
-    margin: 0 0 0 35px;
+    margin: 0 0 0 25px;
 }
 
 header a.donate {
@@ -41,6 +49,7 @@ header a.donate {
     font-weight: 700;
     letter-spacing: 1px;
     transition: 0.2s color ease-in, 0.2s border-color ease-in;
+    margin: 0 25px 0 0;
 }
 
 header a.donate:hover {
@@ -62,10 +71,35 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 5;
 }
 
 #intro p {
     max-width: 800px;
+    box-sizing: border-box;
+    padding: 0 25px;
+}
+
+#section1 {
+    z-index: 6;
+}
+
+#section2 {
+    z-index: 4;
+}
+
+#section3 {
+    z-index: 3;
+}
+
+#section4 {
+    z-index: 2;
+}
+
+#donate {
+    min-height: 100vh;
+    height: 100%;
+    z-index: 1;
 }
 
 section.light,
@@ -74,6 +108,7 @@ section.dark {
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow: hidden;
 }
 
 section.dark {
@@ -113,6 +148,8 @@ section.dark .big-number {
     z-index: 2;
     overflow: hidden;
     width: 100%;
+    box-sizing: border-box;
+    padding: 0 25px;
 }
 
 .main-container img {
@@ -124,7 +161,14 @@ section.dark .big-number {
     width: 100%;
     max-width: 700px;
     box-sizing: border-box;
-    padding: 0 50px;
+}
+
+section.light .text-container {
+    padding: 0 0 0 50px;
+}
+
+section.dark .text-container {
+    padding: 0 50px 0 0;
 }
 
 p {
@@ -141,7 +185,10 @@ section.dark p {
     text-align: right;
 }
 
-#bigno1,
+#bigno1 {
+    top: -30%;
+}
+
 #bigno2,
 #bigno3,
 #bigno4 {
@@ -233,19 +280,26 @@ section.dark p {
 
 #donate h1 {
     color: var(--color1);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 25px;
 }
 
 #donate p {
     max-width: 800px;
+    box-sizing: border-box;
+    padding: 0 35px;
 }
 
 .btn-container {
     max-width: 800px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
     margin-top: 50px;
+    box-sizing: border-box;
+    padding: 0 25px;
 }
 
 .btn-container a {
@@ -260,9 +314,93 @@ section.dark p {
     padding: 10px 20px 12px 20px;
     width: 220px;
     transition: 0.2s color ease-in, 0.2s border-color ease-in;
+    margin: 0 20px;
 }
 
 .btn-container a:hover {
     border-color: var(--color2);
     color: var(--color2);
+}
+
+@media all and (max-height: 850px) {
+    h1 {
+        font-size: 3.0rem;
+    }
+    p {
+        font-size: 1.3rem;
+        max-width: 600px;
+        line-height: 1.4;
+    }
+    .btn-container a {
+        font-size: 1.25rem;
+    }
+}
+
+@media all and (max-height: 750px) {
+    h1 {
+        margin: 22px 0;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .main-container img {
+        max-width: 200px;
+    }
+}
+
+@media all and (max-height: 700px) {
+    .main-container img {
+        max-width: 150px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    header img {
+        width: 250px;
+        margin: 0;
+    }
+    header a.donate {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .main-container {
+        flex-flow: column nowrap;
+    }
+    section.light,
+    section.dark {
+        padding-top: 72px;
+    }
+    section.light .text-container,
+    section.dark .text-container {
+        order: 2;
+        padding: 0;
+    }
+    section.light h1,
+    section.dark h1 {
+        text-align: center;
+    }
+    section.dark p {
+        text-align: left;
+    }
+    p {
+        font-size: 1.0rem;
+    }
+}
+
+@media all and (max-width: 445px) {
+    header img {
+        width: 160px;
+    }
+    header a.donate {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+
+@media all and (max-height: 650px) {
+    .main-container img {
+        display: none;
+    }
 }
