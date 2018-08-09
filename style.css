@@ -69,6 +69,7 @@ section {
 
 #intro {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     z-index: 5;
@@ -78,6 +79,55 @@ section {
     max-width: 800px;
     box-sizing: border-box;
     padding: 0 25px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.scroll-arrow {
+    width: 100%;
+    align-self: flex-end;
+    text-align: center;
+    height: 60px;
+}
+
+.scroll-arrow svg {
+    -webkit-animation: fadeInUp 1s ease-out, arrowBounce 1s 1.5s infinite ease-in-out;
+    animation: fadeInUp 1s ease-out, arrowBounce 1s 1.5s infinite ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 10%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes arrowBounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translate3d(0, 0, 0);
+    }
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -25px, 0);
+    }
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translate3d(0, -15px, 0);
+    }
+    90% {
+        transform: translate3d(0, -6px, 0);
+    }
 }
 
 #section1 {
@@ -297,7 +347,7 @@ section.dark p {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    margin-top: 50px;
+    margin: 25px 0;
     box-sizing: border-box;
     padding: 0 25px;
 }
@@ -314,7 +364,9 @@ section.dark p {
     padding: 10px 20px 12px 20px;
     width: 220px;
     transition: 0.2s color ease-in, 0.2s border-color ease-in;
-    margin: 0 20px;
+    margin: 25px 20px 0 20px;
+    min-height: 78px;
+    box-sizing: border-box;
 }
 
 .btn-container a:hover {
